@@ -18,11 +18,17 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'nom',
+        'prenom',
+        'age',
+        'pois',
+        'foot'
     ];
+public function team(){
 
+    return $this->belongsTo(Team::class);
+}
+   protected $tables ="users";
     /**
      * The attributes that should be hidden for serialization.
      *
